@@ -1,0 +1,640 @@
+/* Hand-drawn Data Scientist Portfolio - Styles */
+
+/* Base Styles & Variables */
+:root {
+    --paper-color: #f9f6f0;
+    --ink-color: #2d2d2d;
+    --accent-color: #4a6fa5;
+    --secondary-color: #e57373;
+    --tertiary-color: #81c784;
+    --sketch-font: 'Kalam', cursive;
+    --title-font: 'Caveat', cursive;
+    --body-font: 'Indie Flower', cursive;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--paper-color);
+    color: var(--ink-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Noise Overlay for Paper Texture */
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4d5eXlzc3OLi4ubm5uVlZWPj4+NjY19fX2JiYl/f39ra2uRkZGZmZlpaWmXl5dvb29xcXGTk5NnZ2c8TV1mAAAAG3RSTlNAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAvEOwtAAAFVklEQVR4XpWWB67c2BUFb3g557T/hRo9/WUMZHlgr4Bg8Z4qQgQJlHI4A8SzFVrapvmTF9O7dmYRFZ60YiBhJRCgh1FYhiLAmdvX0CzTOpNE77ME0Zty/nWWzchDtiqrmQDeuv3powQ5ta2eN0FY0InkqDD73lT9c9lEzwUNqgFHs9VQce3TVClFCQrSTfOiYkVJQBmpbq2L6iZavPnAPcoU0dSw0SUTqz/GtrGuXfbyyBniKykOWQWGqwwMA7QiYAxi+IlPdqo+hYHnUt5ZPfnsHJyNiDtnpJyayNBkF6cWoYGAMY92U2hXHF/C1M8uP/ZtYdiuj26UdAdQQSXQErwSOMzt/XWRWAz5GuSBIkwG1H3FabJ2OsUOUhGC6tK4EMtJO0ttC6IBD3kM0ve0tJwMdSfjZo+EEISaeTr9P3wYrGjXqyC1krcKdhMpxEnt5JetoulscpyzhXN5FRpuPHvbeQaKxFAEB6EN+cYN6xD7RYGpXpNndMmZgM5Dcs3YSNFDHUo2LGfZuukSWyUYirJAdYbF3MfqEKmjM+I2EfhA94iG3L7uKrR+GdWD73ydlIB+6hgref1QTlmgmbM3/LeX5GI1Ux1RWpgxpLuZ2+I+IjzZ8wqE4nilvQdkUdfhzI5QDWy+kw5Wgg2pGpeEVeCCA7b85BO3F9DzxB3cdqvBzWcmzbyMiqhzuYqtHRVG2y4x+KOlnyqla8AoWWpuBoYRxzXrfKuILl6SfiWCbjxoZJUaCBj1CjH7GIaDbc9kqBY3W/Rgjda1iqQcOJu2WW+76pZC9QG7M00dffe9hNnseupFL53r8F7YHSwJWUKP2q+k7RdsxyOB11n0xtOvnW4irMMFNV4H0uqwS5ExsmP9AxbDTc9JwgneAT5vTiUSm1E7BSflSt3bfa1tv8Di3R8n3Af7MNWzs49hmauE2wP+ttrq+AsWpFG2awvsuOqbipWHgtuvuaAE+A1Z/7gC9hesnr+7wqCwG8c5yAg3AL1fm8T9AZtp/bbJGwl1pNrE7RuOX7PeMRUERVaPpEs+yqeoSmuOlokqw49pgomjLeh7icHNlG19yjs6XXOMedYm5xH2YxpV2tc0Ro2jJfxC50ApuxGob7lMsxfTbeUv07TyYxpeLucEH1gNd4IKH2LAg5TdVhlCafZvpskfncCfx8pOhJzd76bJWeYFnFciwcYfubRc12Ip/ppIhA1/mSZ/RxjFDrJC5xifFjJpY2Xl5zXdguFqYyTR1zSp1Y9p+tktDYYSNflcxI0iyO4TPBdlRcpeqjK/piF5bklq77VSEaA+z8qmJTFzIWiitbnzR794USKBUaT0NTEsVjZqLaFVqJoPN9ODG70IPbfBHKK+/q/AWR0tJzYHRULOa4MP+W/HfGadZUbfw177G7j/OGbIs8TahLyynl4X4RinF793Oz+BU0saXtUHrVBFT/DnA3ctNPoGbs4hRIjTok8i+algT1lTHi4SxFvONKNrgQFAq2/gFnWMXgwffgYMJpiKYkmW3tTg3ZQ9Jq+f8XN+A5eeUKHWvJWJ2sgJ1Sop+wwhqFVijqWaJhwtD8MNlSBeWNNWTa5Z5kPZw5+LbVT99wqTdx29lMUH4OIG/D86ruKEauBjvH5xy6um/Sfj7ei6UUVk4AIl3MyD4MSSTOFgSwsH/QJWaQ5as7ZcmgBZkzjjU1UrQ74ci1gWBCSGHtuV1H2mhSnO3Wp/3fEV5a+4wz//6qy8JxjZsmxxy5+4w9CDNJY09T072iKG0EnOS0arEYgXqYnXcYHwjTtUNAcMelOd4xpkoqiTYICWFq0JSiPfPDQdnt+4/wuqcXY47QILbgAAAABJRU5ErkJggg==');
+    opacity: 0.05;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--title-font);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,2.5 Q25,5 50,2.5 T100,2.5' stroke='%234a6fa5' fill='none' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Navigation */
+.sketch-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    position: relative;
+}
+
+.logo {
+    font-family: var(--title-font);
+    font-size: 1.8rem;
+    font-weight: 700;
+    position: relative;
+    padding: 5px 10px;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--ink-color);
+    border-radius: 5px;
+    transform: rotate(-2deg);
+    z-index: -1;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--ink-color);
+    font-family: var(--sketch-font);
+    font-size: 1.2rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,1 Q25,2 50,1 T100,1' stroke='%234a6fa5' fill='none' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.sketch-header {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 0;
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.sketch-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.sketch-title::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg width='200' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,5 Q50,10 100,5 T200,5' stroke='%23e57373' fill='none' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+.sketch-subtitle {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+}
+
+.sketch-text {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-illustration {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.sketch-animation {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+/* Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.sketch-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    font-family: var(--sketch-font);
+    font-size: 1.1rem;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.sketch-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-color);
+    border: 2px solid var(--ink-color);
+    border-radius: 5px;
+    transform: rotate(-1deg);
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+.sketch-button:hover::before {
+    transform: rotate(1deg);
+}
+
+.sketch-button.outline {
+    background-color: transparent;
+    color: var(--accent-color);
+}
+
+.sketch-button.outline::before {
+    background-color: transparent;
+}
+
+/* Sections */
+.sketch-section {
+    padding: 6rem 0;
+    position: relative;
+}
+
+/* About Section */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-illustration {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.notebook-sketch {
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.skill-category {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 1.5rem;
+    border-radius: 5px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.skill-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--ink-color);
+    border-radius: 5px;
+    transform: rotate(-1deg);
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+.skill-category:hover::before {
+    transform: rotate(1deg);
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.skill-item {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.skill-item::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.skill-visualization {
+    margin-top: 3rem;
+}
+
+.sketch-chart {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 1.5rem;
+    border-radius: 5px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--ink-color);
+    border-radius: 5px;
+    transform: rotate(-0.5deg);
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover::before {
+    transform: rotate(0.5deg);
+}
+
+.project-sketch {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.project-tags span {
+    background-color: var(--paper-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.project-tags span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--ink-color);
+    border-radius: 20px;
+    transform: rotate(-0.5deg);
+    z-index: -1;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-family: var(--sketch-font);
+    font-weight: 700;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.project-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,1 Q25,2 50,1 T100,1' stroke='%234a6fa5' fill='none' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+}
+
+/* Contact Section */
+.contact-content {
+    display: flex;
+    gap: 3rem;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+.contact-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.contact-icon {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+.contact-form-container {
+    flex: 1;
+}
+
+.sketch-form {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 2rem;
+    border-radius: 5px;
+    position: relative;
+}
+
+.sketch-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--ink-color);
+    border-radius: 5px;
+    transform: rotate(-0.5deg);
+    z-index: -1;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: var(--sketch-font);
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--ink-color);
+    border-radius: 5px;
+    background-color: var(--paper-color);
+    font-family: var(--body-font);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+/* Footer */
+.sketch-footer {
+    padding: 2rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.sketch-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 2px;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,1 Q25,2 50,1 T100,1' stroke='%232d2d2d' fill='none' stroke-width='1' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .contact-content {
+        flex-direction: column;
+    }
+    
+    .sketch-title {
+        font-size: 3rem;
+    }
+    
+    .sketch-subtitle {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sketch-nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        justify-content: center;
+    }
+    
+    .nav-links li {
+        margin: 0 1rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sketch-title {
+        font-size: 2.5rem;
+    }
+    
+    .sketch-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.sketch-draw {
+    position: relative;
+}
+
+.sketch-draw::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--paper-color);
+    transform-origin: left;
+    animation: drawReveal 1.5s ease forwards;
+}
+
+@keyframes drawReveal {
+    from { transform: scaleX(1); }
+    to { transform: scaleX(0); }
+}

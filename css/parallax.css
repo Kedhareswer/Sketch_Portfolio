@@ -1,0 +1,89 @@
+/* Hand-drawn Data Scientist Portfolio - Parallax Effects */
+
+/* Parallax Doodle Elements */
+.parallax-doodle {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.1;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/* Different doodle shapes */
+.parallax-doodle:nth-child(5n+1) {
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='25' cy='25' r='20' fill='none' stroke='%234a6fa5' stroke-width='2' stroke-dasharray='5,5' /%3E%3C/svg%3E");
+}
+
+.parallax-doodle:nth-child(5n+2) {
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10,10 L40,10 L40,40 L10,40 Z' fill='none' stroke='%23e57373' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E");
+}
+
+.parallax-doodle:nth-child(5n+3) {
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10,25 Q25,5 40,25 T10,25' fill='none' stroke='%2381c784' stroke-width='2' /%3E%3C/svg%3E");
+}
+
+.parallax-doodle:nth-child(5n+4) {
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15,15 L35,15 L25,35 Z' fill='none' stroke='%23ffb74d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E");
+}
+
+.parallax-doodle:nth-child(5n+5) {
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10,10 Q20,20 10,30 Q20,40 30,30 Q40,20 30,10 Q20,0 10,10 Z' fill='none' stroke='%232d2d2d' stroke-width='2' /%3E%3C/svg%3E");
+}
+
+/* Section-specific parallax effects */
+#about .parallax-doodle {
+    filter: hue-rotate(30deg);
+}
+
+#skills .parallax-doodle {
+    filter: hue-rotate(60deg);
+}
+
+#projects .parallax-doodle {
+    filter: hue-rotate(90deg);
+}
+
+#contact .parallax-doodle {
+    filter: hue-rotate(120deg);
+}
+
+/* Active navigation link style */
+.nav-links a.active-link {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.nav-links a.active-link::after {
+    width: 100%;
+}
+
+/* Title underline style */
+.title-underline {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 3px;
+}
+
+/* Enhanced hover effects */
+.skill-category h3 {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.skill-category:hover h3 {
+    transform: scale(1.05);
+    color: var(--accent-color);
+}
+
+/* Responsive adjustments for parallax effects */
+@media (max-width: 768px) {
+    .parallax-doodle {
+        opacity: 0.05;
+    }
+}

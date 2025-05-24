@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand-Drawn Data Scientist Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/parallax.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Indie+Flower&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    
+    <header class="sketch-header">
+        <div class="container">
+            <nav class="sketch-nav">
+                <div class="logo">DS Portfolio</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="sketch-title">Data Scientist</h1>
+                    <h2 class="sketch-subtitle">Turning Data into Insights</h2>
+                    <p class="sketch-text">Welcome to my hand-drawn data science journey</p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="sketch-button">View Projects</a>
+                        <a href="#contact" class="sketch-button outline">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-illustration">
+                    <!-- This will be a hand-drawn illustration of data visualization -->
+                    <div class="sketch-animation" id="hero-sketch"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="sketch-section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm a data scientist passionate about extracting meaningful insights from complex datasets. With a background in statistics and machine learning, I transform raw data into actionable intelligence.</p>
+                    <p>My approach combines analytical rigor with creative problem-solving, always with an eye toward practical applications that drive business value.</p>
+                </div>
+                <div class="about-illustration">
+                    <div class="notebook-sketch">
+                        <!-- This will be animated to look like a hand-drawn notebook -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="sketch-section">
+        <div class="container">
+            <h2 class="section-title">Skills & Tools</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Data Analysis</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item" data-skill="Python">Python</li>
+                        <li class="skill-item" data-skill="R">R</li>
+                        <li class="skill-item" data-skill="SQL">SQL</li>
+                        <li class="skill-item" data-skill="Excel">Excel</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Machine Learning</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item" data-skill="Scikit-learn">Scikit-learn</li>
+                        <li class="skill-item" data-skill="TensorFlow">TensorFlow</li>
+                        <li class="skill-item" data-skill="PyTorch">PyTorch</li>
+                        <li class="skill-item" data-skill="NLP">NLP</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Visualization</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item" data-skill="Matplotlib">Matplotlib</li>
+                        <li class="skill-item" data-skill="Seaborn">Seaborn</li>
+                        <li class="skill-item" data-skill="Tableau">Tableau</li>
+                        <li class="skill-item" data-skill="D3.js">D3.js</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Big Data</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item" data-skill="Spark">Spark</li>
+                        <li class="skill-item" data-skill="Hadoop">Hadoop</li>
+                        <li class="skill-item" data-skill="AWS">AWS</li>
+                        <li class="skill-item" data-skill="GCP">GCP</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="skill-visualization">
+                <!-- This will be an animated hand-drawn skill chart -->
+                <div class="sketch-chart" id="skills-chart"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="sketch-section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-sketch">
+                        <!-- Project illustration -->
+                    </div>
+                    <h3>Predictive Analytics Dashboard</h3>
+                    <p>A machine learning model that predicts customer behavior with interactive visualizations.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Machine Learning</span>
+                        <span>D3.js</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-sketch">
+                        <!-- Project illustration -->
+                    </div>
+                    <h3>Natural Language Processing Tool</h3>
+                    <p>An NLP system that analyzes sentiment and extracts insights from text data.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>NLP</span>
+                        <span>TensorFlow</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-sketch">
+                        <!-- Project illustration -->
+                    </div>
+                    <h3>Time Series Forecasting</h3>
+                    <p>A forecasting model for financial data with interactive charts and predictions.</p>
+                    <div class="project-tags">
+                        <span>R</span>
+                        <span>Time Series</span>
+                        <span>Tableau</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-sketch">
+                        <!-- Project illustration -->
+                    </div>
+                    <h3>Clustering Algorithm Visualization</h3>
+                    <p>An interactive tool to visualize how different clustering algorithms work on various datasets.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Scikit-learn</span>
+                        <span>D3.js</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="sketch-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>Interested in working together? Feel free to reach out through any of these channels:</p>
+                    <ul class="contact-list">
+                        <li><span class="contact-icon">✉️</span> email@example.com</li>
+                        <li><span class="contact-icon">🔗</span> linkedin.com/in/yourprofile</li>
+                        <li><span class="contact-icon">🐙</span> github.com/yourusername</li>
+                    </ul>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form sketch-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="sketch-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="sketch-footer">
+        <div class="container">
+            <p>© 2023 Data Scientist Portfolio. All sketches and code handcrafted with ❤️</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@rive-app/canvas@1.0.79"></script>
+    <script src="js/rough.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
